@@ -1,510 +1,252 @@
-```css
-/* =====================================================
+/* ==========================================================
    THE SUBSTITUTE
+   GLOBAL WEBSITE STYLESHEET
    Bradley Hobbs
-   ===================================================== */
+   ========================================================== */
 
 :root {
-
---background: #0d1117;
---surface: #161b22;
---surface-hover: #1f2630;
-
---gold: #d4af37;
---gold-light: #e7c96c;
-
---text: #f5f5f5;
---text-muted: #c5c8ce;
-
---border: #2f3742;
-
---shadow:
-0 10px 30px rgba(0,0,0,.35);
-
+--background:#050b12;
+--background-alt:#0b121a;
+--surface:#0f1720;
+--surface-hover:#18222d;
+--gold:#d4a63a;
+--gold-light:#f0c766;
+--sunrise:#f4bf4f;
+--sunrise-light:#ffd978;
+--forest:#6f8f3a;
+--forest-light:#8eaf57;
+--wood:#7d5a34;
+--text:#f7f4ee;
+--text-muted:#cfc7b8;
+--border:#2a3440;
+--shadow:0 15px 35px rgba(0,0,0,.45);
+--container:1100px;
 }
 
-/* =====================================================
-   RESET
-   ===================================================== */
-
-* {
-
-margin: 0;
-padding: 0;
-box-sizing: border-box;
-
+*{margin:0;padding:0;box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{
+background:linear-gradient(180deg,var(--background),var(--background-alt),var(--background));
+color:var(--text);
+font-family:"Inter",sans-serif;
+line-height:1.9;
+min-height:100vh;
 }
 
-html {
+::selection{background:var(--gold);color:#000;}
+img{max-width:100%;height:auto;display:block;}
 
-scroll-behavior: smooth;
+main{width:min(var(--container),92%);margin:auto;}
 
+a{color:var(--gold);text-decoration:none;transition:all .3s ease;}
+a:hover{color:var(--sunrise-light);}
+
+header{
+position:sticky;
+top:0;
+z-index:1000;
+background:rgba(5,11,18,.95);
+backdrop-filter:blur(10px);
+border-bottom:1px solid rgba(212,166,58,.15);
 }
 
-body {
-
-background: var(--background);
-color: var(--text);
-
-font-family:
-"Segoe UI",
-Tahoma,
-Geneva,
-Verdana,
-sans-serif;
-
-line-height: 1.8;
-
+nav{
+display:flex;
+justify-content:center;
+align-items:center;
+gap:2rem;
+padding:1rem;
+flex-wrap:wrap;
 }
 
-/* =====================================================
-   LINKS
-   ===================================================== */
+nav a{font-weight:600;letter-spacing:.5px;}
 
-a {
-
-color: var(--gold);
-text-decoration: none;
-transition: .3s;
-
+.banner{margin:2rem 0 3rem;}
+.banner img{
+border-radius:20px;
+box-shadow:var(--shadow);
+border:1px solid rgba(212,166,58,.15);
 }
 
-a:hover {
+.hero-content{text-align:center;padding-bottom:4rem;}
 
-color: var(--gold-light);
-
+.hero-content h1{
+font-family:"Cinzel",serif;
+font-size:clamp(3rem,7vw,5.5rem);
+color:var(--gold);
+line-height:1.1;
+margin-bottom:1rem;
 }
 
-/* =====================================================
-   HEADER
-   ===================================================== */
-
-header {
-
-background: rgba(13,17,23,.95);
-
-position: sticky;
-top: 0;
-z-index: 1000;
-
-border-bottom:
-1px solid var(--border);
-
-backdrop-filter: blur(10px);
-
+.hero-content h2{
+font-size:clamp(1.2rem,3vw,2rem);
+font-weight:400;
+color:var(--text-muted);
+margin-bottom:2rem;
 }
 
-nav {
-
-max-width: 1200px;
-margin: auto;
-
-display: flex;
-justify-content: center;
-align-items: center;
-gap: 2rem;
-
-padding: 1rem;
-
-flex-wrap: wrap;
-
+.hero-content p{
+max-width:760px;
+margin:0 auto 2rem;
+font-size:1.1rem;
 }
 
-nav a {
-
-font-weight: 600;
-letter-spacing: .5px;
-
+.btn,
+.hero-content a{
+display:inline-block;
+padding:14px 30px;
+background:linear-gradient(135deg,var(--gold),var(--sunrise));
+color:#000;
+font-weight:700;
+border-radius:12px;
+box-shadow:0 5px 15px rgba(212,166,58,.25);
 }
-
-/* =====================================================
-   MAIN CONTAINER
-   ===================================================== */
-
-main {
-
-max-width: 1100px;
-margin: auto;
-
-padding-left: 20px;
-padding-right: 20px;
-
-}
-
-/* =====================================================
-   BANNER
-   ===================================================== */
-
-.banner {
-
-margin-top: 2rem;
-margin-bottom: 3rem;
-
-}
-
-.banner img {
-
-display: block;
-
-width: 100%;
-height: auto;
-
-border-radius: 18px;
-
-box-shadow: var(--shadow);
-
-border:
-1px solid var(--border);
-
-}
-
-/* =====================================================
-   HERO CONTENT
-   ===================================================== */
-
-.hero-content {
-
-text-align: center;
-
-margin-bottom: 5rem;
-
-}
-
-.hero-content h1 {
-
-font-size:
-clamp(2.8rem, 6vw, 5rem);
-
-color: var(--gold);
-
-margin-bottom: 1rem;
-
-line-height: 1.1;
-
-}
-
-.hero-content h2 {
-
-font-size:
-clamp(1.2rem, 3vw, 1.8rem);
-
-font-weight: 400;
-
-color: var(--text-muted);
-
-margin-bottom: 2rem;
-
-}
-
-.hero-content p {
-
-max-width: 850px;
-
-margin-left: auto;
-margin-right: auto;
-
-font-size: 1.15rem;
-
-}
-
-.hero-content a {
-
-display: inline-block;
-
-margin-top: 2rem;
-
-padding:
-14px 30px;
-
-background: var(--gold);
-
-color: #000;
-
-font-weight: 700;
-
-border-radius: 10px;
-
-}
-
-.hero-content a:hover {
-
-transform: translateY(-2px);
-
-}
-
-/* =====================================================
-   SECTIONS
-   ===================================================== */
 
 .book-overview,
 .author-section,
-.chapters {
-
-margin-bottom: 5rem;
-
-}
+.chapters{margin-bottom:5rem;}
 
 .book-overview h2,
 .author-section h2,
-.chapters h2 {
-
-font-size: 2rem;
-
-color: var(--gold);
-
-margin-bottom: 1.5rem;
-
-text-align: center;
-
+.chapters h2{
+font-family:"Cinzel",serif;
+font-size:clamp(2rem,4vw,3rem);
+color:var(--gold);
+text-align:center;
+margin-bottom:1.5rem;
 }
 
 .book-overview p,
-.author-section p {
-
-max-width: 900px;
-
-margin-left: auto;
-margin-right: auto;
-
-font-size: 1.08rem;
-
-color: var(--text-muted);
-
+.author-section p{
+max-width:760px;
+margin:auto;
+color:var(--text-muted);
 }
 
-/* =====================================================
-   TABLE OF CONTENTS
-   ===================================================== */
-
-.chapters ul {
-
-list-style: none;
-
-max-width: 900px;
-
-margin: auto;
-
-display: grid;
-gap: 1rem;
-
+.author-section{
+background:linear-gradient(180deg,var(--surface),#141d27);
+padding:2.5rem;
+border-radius:20px;
+border:1px solid rgba(212,166,58,.12);
 }
 
-.chapters li {
-
-background: var(--surface);
-
-border:
-1px solid var(--border);
-
-border-radius: 12px;
-
-padding: 1rem 1.25rem;
-
-transition: .3s;
-
+.chapters ul{
+list-style:none;
+max-width:900px;
+margin:auto;
+display:grid;
+gap:1rem;
 }
 
-.chapters li:hover {
-
-background: var(--surface-hover);
-
-transform: translateY(-2px);
-
+.chapters li{
+background:linear-gradient(180deg,var(--surface),#141d27);
+padding:1rem 1.25rem;
+border-radius:12px;
+border:1px solid rgba(212,166,58,.1);
 }
 
-.chapters a {
-
-display: block;
-
-font-weight: 600;
-
+.chapter-header{
+text-align:center;
+max-width:850px;
+margin:3rem auto;
 }
 
-/* =====================================================
-   AUTHOR BOX
-   ===================================================== */
-
-.author-section {
-
-background: var(--surface);
-
-border:
-1px solid var(--border);
-
-border-radius: 18px;
-
-padding: 2rem;
-
+.chapter-number{
+display:block;
+font-size:.9rem;
+font-weight:700;
+letter-spacing:3px;
+text-transform:uppercase;
+color:var(--forest-light);
+margin-bottom:1rem;
 }
 
-/* =====================================================
-   CHAPTER PAGES
-   ===================================================== */
-
-.chapter-header {
-
-text-align: center;
-
-margin-top: 3rem;
-margin-bottom: 3rem;
-
+.chapter-header h1{
+font-family:"Cinzel",serif;
+font-size:clamp(2.2rem,5vw,4rem);
+color:var(--gold);
+margin-bottom:1rem;
 }
 
-.chapter-header h1 {
-
-font-size:
-clamp(2rem, 5vw, 3.5rem);
-
-color: var(--gold);
-
-margin-bottom: 1rem;
-
+.chapter-meta{
+color:var(--text-muted);
+margin-bottom:2rem;
 }
 
-.chapter-intro {
-
-max-width: 850px;
-
-margin-left: auto;
-margin-right: auto;
-
-font-size: 1.1rem;
-
-color: var(--text-muted);
-
+.chapter-intro{
+max-width:760px;
+margin:auto;
+font-size:1.15rem;
+line-height:1.9;
+padding:1.5rem 0;
+color:var(--text-muted);
 }
 
-.chapter-content {
-
-max-width: 900px;
-
-margin-left: auto;
-margin-right: auto;
-
+.chapter-content{
+max-width:760px;
+margin:auto;
+scroll-margin-top:120px;
 }
 
-.chapter-content h1 {
-
-font-size: 3rem;
-
-text-align: center;
-
-color: var(--gold);
-
-margin-bottom: 1rem;
-
+.chapter-content p{
+margin-bottom:1.8rem;
+font-size:1.08rem;
 }
 
-.chapter-content h2 {
-
-text-align: center;
-
-margin-bottom: 2rem;
-
-color: var(--text-muted);
-
-font-weight: 400;
-
+.quote-box{
+background:rgba(212,166,58,.08);
+border-left:4px solid var(--gold);
+padding:1.5rem;
+margin:2rem 0;
+border-radius:12px;
+font-style:italic;
 }
 
-.chapter-content p {
-
-margin-bottom: 1.8rem;
-
-font-size: 1.08rem;
-
+.book-path{
+margin:2rem 0;
+color:var(--text-muted);
+font-size:.95rem;
 }
 
-/* =====================================================
-   CHAPTER NAVIGATION
-   ===================================================== */
-
-.chapter-navigation {
-
-display: flex;
-
-justify-content: space-between;
-
-gap: 1rem;
-
-margin-top: 4rem;
-
-padding-top: 2rem;
-
-border-top:
-1px solid var(--border);
-
+.chapter-navigation{
+display:flex;
+justify-content:space-between;
+gap:1rem;
+margin-top:4rem;
+padding-top:2rem;
+border-top:1px solid rgba(212,166,58,.15);
 }
 
-.chapter-navigation a {
-
-background: var(--surface);
-
-padding:
-12px 20px;
-
-border-radius: 10px;
-
-border:
-1px solid var(--border);
-
+.chapter-navigation a{
+background:var(--surface);
+padding:12px 20px;
+border-radius:10px;
+border:1px solid rgba(212,166,58,.15);
 }
 
-/* =====================================================
-   FOOTER
-   ===================================================== */
-
-footer {
-
-margin-top: 5rem;
-
-padding:
-2rem 1rem;
-
-text-align: center;
-
-border-top:
-1px solid var(--border);
-
+footer{
+margin-top:6rem;
+padding:3rem 1rem;
+text-align:center;
+border-top:1px solid rgba(212,166,58,.15);
 }
 
-footer p {
-
-color: var(--text-muted);
-
-margin-bottom: .5rem;
-
+footer p{
+margin-bottom:.75rem;
+color:var(--text-muted);
 }
 
-/* =====================================================
-   MOBILE
-   ===================================================== */
-
-@media (max-width: 768px) {
-
-nav {
-
-gap: 1rem;
-
+hr{
+border:none;
+height:1px;
+background:rgba(212,166,58,.15);
+margin:3rem 0;
 }
 
-.hero-content {
-
-text-align: left;
-
+@media (max-width:768px){
+nav{flex-direction:column;gap:.75rem;}
+.chapter-navigation{flex-direction:column;}
+.chapter-navigation a{width:100%;text-align:center;}
+.chapter-content p{font-size:1rem;}
+.hero-content{text-align:left;}
 }
-
-.chapter-navigation {
-
-flex-direction: column;
-
-}
-
-.chapter-navigation a {
-
-text-align: center;
-
-}
-
-}
-```
