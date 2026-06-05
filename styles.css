@@ -395,20 +395,37 @@ font-size:1rem;
 text-align:left;
 }
 
-.donation-buttons{
+.footer-links{
+
+display:flex;
+
 flex-direction:column;
-align-items:center;
+
 gap:12px;
+
+margin-bottom:25px;
+
+}
+
+.donation-buttons{
+
+flex-direction:column;
+
+gap:12px;
+
 }
 
 .donate-btn{
+
 width:220px;
+
 text-align:center;
 }
 
-.footer-links{
-flex-direction:column;
-gap:12px;
-}
+.footer-subtitle{
 
+font-size:1rem;
+
+line-height:1.6;
+}
 }
