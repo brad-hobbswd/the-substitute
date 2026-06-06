@@ -252,7 +252,7 @@ justify-content:center;
 
 align-items:center;
 
-gap:20px;
+gap:30px;
 
 flex-wrap:wrap;
 
@@ -260,11 +260,24 @@ margin-bottom:35px;
 
 }
 
+
 .footer-links a{
 
 color:var(--gold);
 
 font-weight:600;
+
+}
+
+footer h3{
+
+font-family:"Cinzel",serif;
+
+font-size:1.8rem;
+
+color:var(--text);
+
+margin-bottom:1.5rem;
 
 }
 
@@ -397,11 +410,9 @@ text-align:left;
 
 .footer-links{
 
-display:flex;
-
 flex-direction:column;
 
-gap:12px;
+gap:14px;
 
 margin-bottom:25px;
 
@@ -428,4 +439,5 @@ font-size:1rem;
 
 line-height:1.6;
 }
+
 }
